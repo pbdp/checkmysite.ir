@@ -3,13 +3,27 @@
         Options -MultiViews
     </IfModule>
 
-    RewriteEngine On
+	RewriteEngine On
 
-    RewriteCond %{THE_REQUEST} ^.*/index\.php
-    RewriteRule ^(.*)index.php$ /$1 [R=301,L]
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    RewriteCond %{REQUEST_URI} !^public
-    RewriteRule ^(.*)$ public/$1 [L]
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_URI} !(\.css|\.js|\.png|\.jpg|\.jpeg|\.gif|robots\.txt|\.ico|\.woff|\.woff2|.ttf|\.svg|\.webp)$ [NC]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(custom|css|assets|landing|storage|installer|js)/(.*)$ public/$1/$2 [L,NC]
 
     <Files ~ "\.(env|config.js|md|gitignore|gitattributes|lock)$">
         Order allow,deny
