@@ -125,7 +125,7 @@ WebP'],
                 ['name' => 'tagline', 'value' => 'Insightful and concise SEO reports'],
                 ['name' => 'theme', 'value' => '0'],
                 ['name' => 'timezone', 'value' => 'UTC'],
-                ['name' => 'title', 'value' => 'phpRank'],
+                ['name' => 'title', 'value' => 'CheckMySite'],
                 ['name' => 'tracking_code', 'value' => NULL]
             ]
         );

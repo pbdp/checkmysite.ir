@@ -3,9 +3,9 @@
 return [
 
     'software' => [
-        'name'      => 'phpRank',
-        'author'    => 'Lunatio',
-        'url'       => 'https://lunatio.com',
+        'name'      => 'CheckMySite',
+        'author'    => 'Sasan Salamzadeh',
+        'url'       => 'https://salamzadeh.net',
         'version'   => '2.0.0'
     ]
 

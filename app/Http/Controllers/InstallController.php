@@ -346,7 +346,7 @@ class InstallController extends Controller
         $httpClient = new HttpClient(['timeout' => 10, 'verify' => false]);
 
         try {
-            $httpClient->request('POST', 'https://api.lunatio.com/newsletter',
+            $httpClient->request('POST', 'https://pbdp.co/api/newsletter',
                 [
                     'form_params' => [
                         'email' => $request->input('email')
