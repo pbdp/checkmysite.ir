@@ -23,7 +23,7 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_URI} !^/public/
-    RewriteRule ^(custom|css|assets|landing|storage|installer|js)/(.*)$ public/$1/$2 [L,NC]
+    RewriteRule ^(custom|css|assets|images|storage|uploads|js)/(.*)$ public/$1/$2 [L,NC]
 
     <Files ~ "\.(env|config.js|md|gitignore|gitattributes|lock)$">
         Order allow,deny
