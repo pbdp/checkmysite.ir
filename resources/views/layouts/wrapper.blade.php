@@ -18,7 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app'. (__('lang_dir') == 'rtl' ? '.rtl' : '') . (config('settings.dark_mode') == 1 ? '.dark' : '').'.css') }}" rel="stylesheet" data-theme-light="{{ asset('css/app'. (__('lang_dir') == 'rtl' ? '.rtl' : '') . '.css') }}" data-theme-dark="{{ asset('css/app'. (__('lang_dir') == 'rtl' ? '.rtl' : '') . '.dark.css') }}" data-theme-target="href">
-
+    @if(__('lang_dir') == 'rtl')
+        <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" />
+    @endif
     {!! config('settings.custom_js') !!}
 
     @if(config('settings.custom_css'))
